@@ -1,0 +1,18 @@
+app = "whatsappn8n" # ضع اسم من اختيارك
+primary_region = "fra"
+
+[env]
+  SERVER_URL = "https://whatsappn8n.fly.dev"
+  AUTHENTICATION_API_KEY = "whatsappn8n"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 8080
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
